@@ -10,7 +10,7 @@ import URRegistryFFI
 import URKit
 
 public class KeystoneWallet: KeystoneBaseSDK {
-    func parseMultiAccounts(ur: UR) throws -> MultiAccounts {
+    public func parseMultiAccounts(ur: UR) throws -> MultiAccounts {
         let multiAccounts = handle_error(
             get_result: { parse_crypto_multi_accounts($0, ur.type, ur.cbor.cborData.hexEncodedString()) }
         )
